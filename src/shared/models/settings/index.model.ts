@@ -1,4 +1,4 @@
-export class Settings {
+export class SettingsModel {
   public set defaultTextEngine(_name: string) {}
 
   public get defaultTextEngine() {

@@ -1,4 +1,4 @@
-export class History {
+export class HistoryModel {
   public delete() {}
 
   public deleteAll() {}

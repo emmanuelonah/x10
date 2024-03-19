@@ -70,13 +70,11 @@ yarn run test:coverage``` script
 
 ## Resources
 
-- [Product design](https://www.figma.com/file/3awAF5mKSCZVdhfnmu8R7g/Service-Dey?type=design&node-id=100-42&t=SkxXK9zT64bhFQfD-0)
-
 - [Local URL](http://localhost:3000)
 
-- [Staging URL](https://x10-staging.vercel.app/)
+- [Staging URL](https://x10-staging.netlify.app/)
 
-- [Production URL](https://x10.com)
+- [Production URL](https://x10.dev)
 
 ## PR convention
 
@@ -96,7 +94,7 @@ For example, image 2 and give the images a title e.g New login page
 
 ## Code convention
 
-We use the "next/core-web-vitals" coding standard which is enforced by an eslint-extension we use. So, ensure to go through at least each file within the folders to get an overview of our coding standards like "imports patterns", "export patterns", "named regular functions", "arrow function", "anonymous function, please don't do this one, we want all our functions to be named at least a-named-function-expression :)"
+We try as much as possible to follow the best and latest code standards. So, ensure to go through at least each file within the folders to get an overview of our coding standards like "imports patterns", "export patterns", "named regular functions", "arrow function", "anonymous function, please don't do this one, we want all our functions to be named at least a-named-function-expression :)"
 
 ## Folder naming convention
 

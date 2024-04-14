@@ -8,10 +8,10 @@ const Heading1 = styled.h1`
 `;
 
 const Heading2 = styled.h2`
-  color: ${(props) => props.theme.colors?.secondary400};
-  font-weight: ${(props) => props.theme.typography?.title2.fontWeight};
-  font-size: ${(props) => props.theme.typography?.title2.fontSize};
-  line-height: ${(props) => props.theme.typography?.lineHeight.xxs};
+  color: ${(props) => props.theme.colors.secondary400};
+  font-weight: ${(props) => props.theme.typography.title2.fontWeight};
+  font-size: ${(props) => props.theme.typography.title2.fontSize};
+  line-height: ${(props) => props.theme.typography.lineHeight.xxs};
 `;
 
 const Heading3 = styled.h3`

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { TextLoader } from 'shared/components';
+import { TextLoader } from 'shared/components/loader/index.component';
+import { ErrorText } from 'shared/components/error-text/index.component';
 
 type PrimitiveDivPropTypes = React.ComponentPropsWithoutRef<'div'>;
 type AsyncRendererElement = React.ElementRef<'div'>;
@@ -26,7 +27,7 @@ export const AsyncRenderer = React.forwardRef<AsyncRendererElement, AsyncRendere
     if (error) {
       return (
         <div {...rest} ref={forwardedRef}>
-          {error.message}
+          <ErrorText>{error.message}</ErrorText>
         </div>
       );
     }

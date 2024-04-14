@@ -4,11 +4,11 @@ import { useBoolean } from 'shared/hooks';
 
 import { InternetNotifierModel } from './index.model';
 
-const INTERNET_STATES = {
-  DEFAULT: 'DEFAULT',
-  GONE_OFFLINE: 'GONE_OFFLINE',
-  BACK_ONLINE: 'BACK_ONLINE',
-} as const;
+enum INTERNET_STATES {
+  DEFAULT = 'DEFAULT',
+  GONE_OFFLINE = 'GONE_OFFLINE',
+  BACK_ONLINE = 'BACK_ONLINE',
+}
 
 export function useInternetNotifier() {
   const { current: model } = useRef(new InternetNotifierModel());
@@ -47,7 +47,7 @@ export function useInternetNotifier() {
 
   return {
     open: shownNotifier,
-    title: isBackOnline ? 'Back online' : 'Gone offline',
+    title: isBackOnline ? '✅ Back online' : '⚠️ Gone offline',
     message: isBackOnline
       ? 'You are now connected to the internet.'
       : 'You are no longer connected to the internet.',

@@ -7,7 +7,7 @@ import { CrossCircledIcon } from '@radix-ui/react-icons';
 import { designTokens } from 'design-system';
 
 import { useInternetNotifier } from './useInternetNotifier.presenter';
-import { Content, Close, Title, Description } from './index.styles';
+import { Content, Close, Header, Title, Description } from './index.styles';
 
 export function InternetNotifier() {
   const closeBtnId = useId('closeBtn');
@@ -17,15 +17,17 @@ export function InternetNotifier() {
     <Dialog.Root open={data.open} modal>
       <Dialog.Portal>
         <Content>
-          <Close type="button" id={closeBtnId} onClick={data.onHideNotifier}>
-            <CrossCircledIcon
-              color={designTokens.colors.dark500}
-              width="35px"
-              height="25px"
-              aria-label="Click to close modal"
-            />
-          </Close>
-          <Title>{data.title} 🛜</Title>
+          <Header>
+            <Title>{data.title}</Title>
+            <Close type="button" id={closeBtnId} onClick={data.onHideNotifier}>
+              <CrossCircledIcon
+                color={designTokens.colors.dark500}
+                width="25px"
+                height="20px"
+                aria-label="Click to close modal"
+              />
+            </Close>
+          </Header>
           <Description>{data.message}</Description>
         </Content>
       </Dialog.Portal>

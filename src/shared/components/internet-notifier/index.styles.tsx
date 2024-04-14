@@ -5,14 +5,15 @@ import { styled } from 'styled-components';
 import { designTokens } from 'design-system';
 
 const Content = styled(Dialog.Content)`
-  background-color: ${({ theme }) => theme.colors.white400};
-  border-radius: ${({ theme }) => theme.typography.borderRadius.lg};
+  background-color: ${({ theme }) => theme.colors.dark300};
+  border-radius: calc(${({ theme }) => theme.typography.borderRadius.md});
+  border: solid 2px ${({ theme }) => theme.colors.dark200};
   box-shadow: 3px 3px 10px 0px #dee2eb;
   color: ${({ theme }) => theme.colors.dark500};
   width: 98%;
-  max-width: 500px;
-  height: 120px;
-  padding: 0.5rem 1rem;
+  max-width: 400px;
+  height: 90px;
+  padding: 0.5rem 0.8rem;
   position: fixed;
   top: 5px;
   right: 5px;
@@ -24,18 +25,24 @@ const Close = styled(Dialog.Close)`
   border: 0;
   outline: none;
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  width: 25px;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
 `;
 
 const Title = styled(Dialog.Title)`
   font-size: ${({ theme }) => theme.typography.boldBody.fontSize};
   font-weight: ${({ theme }) => theme.typography.boldBody.fontWeight};
-  padding-bottom: 0.5rem;
 `;
 
 const Description = styled(Dialog.Description)`
-  padding-top: 0.5rem;
+  font-size: ${({ theme }) => theme.typography.smallText.fontSize};
+  font-weight: ${({ theme }) => theme.typography.smallText.fontWeight};
 `;
 
-export { Content, Close, Title, Description };
+export { Header, Content, Close, Title, Description };

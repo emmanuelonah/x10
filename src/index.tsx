@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
 import { App } from 'app';
+import { Seeder } from 'db/seeds';
 import { startMockServer } from 'test';
 import { GlobalStore } from 'global-store';
 import { reportWebVitals, Natives } from 'configs';
@@ -14,6 +15,8 @@ import { unregisterServiceWorker } from 'service-worker-registration';
 import { SkipToMainContent, GlobalStyles, theme } from 'design-system';
 
 Natives.bind();
+
+Seeder.run();
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { staleTime: 5000 } } });
 

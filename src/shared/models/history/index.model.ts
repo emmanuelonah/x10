@@ -1,9 +1,25 @@
+import { db } from 'db';
+
 export class HistoryModel {
-  public search() {}
+  public static async save(searchedTerm: string) {
+    const date = new Date().toISOString();
 
-  public save() {}
+    await db.histories.add({ searchedTerm, date });
+  }
 
-  public delete() {}
+  public static async all() {
+    return await db.histories.toArray();
+  }
 
-  public deleteAll() {}
+  public static async find(id: number) {
+    return await db.histories.get(id);
+  }
+
+  public static async delete(id: number) {
+    await db.histories.delete(id);
+  }
+
+  public static async deleteAll() {
+    await db.histories.clear();
+  }
 }

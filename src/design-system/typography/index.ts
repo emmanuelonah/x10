@@ -13,7 +13,7 @@
  */
 export const typography = {
   fontFamilies: {
-    primary: '"Poppins", sans-serif',
+    primary: '-apple-system, BlinkMacSystemFont, sans-serif',
     secondary: 'Inter',
   },
   zIndexes: {

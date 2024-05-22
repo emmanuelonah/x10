@@ -21,10 +21,10 @@ export function InternetNotifier() {
             <Title>{data.title}</Title>
             <Close type="button" id={closeBtnId} onClick={data.onHideNotifier}>
               <CrossCircledIcon
-                color={designTokens.colors.dark500}
                 width="25px"
                 height="20px"
                 aria-label="Click to close modal"
+                color={designTokens.colors.dark500}
               />
             </Close>
           </Header>

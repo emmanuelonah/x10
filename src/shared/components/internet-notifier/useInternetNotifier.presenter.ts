@@ -47,7 +47,7 @@ export function useInternetNotifier() {
 
   return {
     open: shownNotifier,
-    title: isBackOnline ? '✅ Back online' : '⚠️ Gone offline',
+    title: isBackOnline ? '🛜 Back online' : '⚠️ Gone offline',
     message: isBackOnline
       ? 'You are now connected to the internet.'
       : 'You are no longer connected to the internet.',

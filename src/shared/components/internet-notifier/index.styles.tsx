@@ -5,11 +5,10 @@ import { styled } from 'styled-components';
 import { designTokens } from 'design-system';
 
 const Content = styled(Dialog.Content)`
-  background-color: ${({ theme }) => theme.colors.dark300};
-  border-radius: calc(${({ theme }) => theme.typography.borderRadius.md});
-  border: solid 2px ${({ theme }) => theme.colors.dark200};
-  box-shadow: 3px 3px 10px 0px #dee2eb;
-  color: ${({ theme }) => theme.colors.dark500};
+  background-color: ${({ theme }) => theme.colors.dark400};
+  border-radius: ${({ theme }) => theme.typography.borderRadius.md};
+  border: solid 2px ${({ theme }) => theme.colors.dark300};
+  color: #bdc1c6;
   width: 98%;
   max-width: 400px;
   height: 90px;
@@ -37,7 +36,7 @@ const Header = styled.div`
 
 const Title = styled(Dialog.Title)`
   font-size: ${({ theme }) => theme.typography.boldBody.fontSize};
-  font-weight: ${({ theme }) => theme.typography.boldBody.fontWeight};
+  font-weight: ${({ theme }) => theme.typography.bodyText.fontWeight};
 `;
 
 const Description = styled(Dialog.Description)`

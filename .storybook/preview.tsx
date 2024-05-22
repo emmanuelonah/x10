@@ -14,7 +14,7 @@ const preview: Preview = {
         <GlobalStyles theme={theme} />
         <QueryClientProvider client={new QueryClient()}>
           <GlobalStore>
-            <div style={{ width: '100vw', height: '100vh', backgroundColor: '#fff' }}>
+            <div style={{ width: '95vw', height: '100vh', backgroundColor: '#fff' }}>
               <Story />
             </div>
           </GlobalStore>

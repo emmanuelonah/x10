@@ -6,7 +6,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cv": "yarn run test --coverage --watchAll=false",
@@ -29,6 +29,7 @@
     "js-crypto-hmac": "^1.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.6",
     "react-helmet": "^6.1.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.22.3",

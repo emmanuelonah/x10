@@ -23,6 +23,7 @@ const ChatBox = styled.textarea`
   height: 100%;
   line-height: 100%;
   resize: none;
+  width: 70%;
 
   &[placeholder] {
     padding: 0.7rem 0rem;
@@ -30,7 +31,23 @@ const ChatBox = styled.textarea`
 `;
 
 const ImageInput = styled.input`
-  border: solid 2px green;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+`;
+
+const ImageInputLabel = styled.label`
+  color: #bdc1c6;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const SubmitButton = styled.button`
@@ -45,4 +62,4 @@ const SubmitButton = styled.button`
   align-items: center;
 `;
 
-export { Form, ChatBox, ImageInput, SubmitButton };
+export { Form, ChatBox, ImageInput, ImageInputLabel, SubmitButton };

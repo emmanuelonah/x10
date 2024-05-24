@@ -19,7 +19,7 @@ const Form = styled.form`
 const ChatBox = styled.textarea`
   background-color: transparent;
   border: none;
-  color: #bdc1c6;
+  color: ${({ theme }) => theme.colors.neutral200};
   height: 100%;
   line-height: 100%;
   resize: none;
@@ -37,7 +37,7 @@ const ImageInput = styled.input`
 `;
 
 const ImageInputLabel = styled.label`
-  color: #bdc1c6;
+  color: ${({ theme }) => theme.colors.neutral200};
   height: 30px;
   width: 30px;
   display: flex;
@@ -53,7 +53,7 @@ const ImageInputLabel = styled.label`
 const SubmitButton = styled.button`
   background-color: transparent;
   border: solid 2px #575a7b;
-  color: #bdc1c6;
+  color: ${({ theme }) => theme.colors.neutral200};
   border-radius: 50%;
   height: 30px;
   width: 30px;

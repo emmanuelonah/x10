@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 
-import iconRunning from './icon-running.gif';
+import iconRunning from 'design-system/assets/icn-running.gif';
 
 import { Button, Content, RunningGiphy } from './menu-widget.styles';
 

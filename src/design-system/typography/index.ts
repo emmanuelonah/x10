@@ -6,8 +6,8 @@
  * @sample
  * ```ts
  *   const H1 = styled.h1`
- *      font-weight: ${(props) => props.theme.typography.title1.fontWeight};
- *       font-size: ${(props) => props.theme.typography.title1.fontSize};
+ *      font-weight: ${({ theme }) => theme.typography.title1.fontWeight};
+ *       font-size: ${({ theme }) => theme.typography.title1.fontSize};
  *   `;
  * ```
  */

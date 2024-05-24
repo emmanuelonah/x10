@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Header = styled.header`
-  background-color: #171719;
+  background-color: ${({ theme }) => theme.colors.dark400};
   height: 100px;
   padding: 1.5rem;
 
@@ -12,7 +12,7 @@ const Header = styled.header`
     height: 100%;
 
     & svg {
-      color: #e8e8e8;
+      color: ${({ theme }) => theme.colors.neutral200};
     }
 
     & button {

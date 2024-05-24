@@ -89,3 +89,5 @@ export const Magenta100: Story = { args: { color: colors.magenta100 } };
 
 export const Neutral400: Story = { args: { color: colors.neutral400 } };
 export const Neutral300: Story = { args: { color: colors.neutral300 } };
+export const Neutral200: Story = { args: { color: colors.neutral200 } };
+export const Neutral100: Story = { args: { color: colors.neutral100 } };

@@ -4,7 +4,7 @@
  * @sample
  * ```ts
  * const H1 = styled.h1`
- *      color: ${(props) => props.theme.colors.warning400};
+ *      color: ${({ theme }) => theme.colors.warning400};
  *   `;
  * ```
  */
@@ -62,4 +62,6 @@ export const colors = {
 
   neutral400: '#6f6c90',
   neutral300: '#d9dbe9',
+  neutral200: '#e8e8e8',
+  neutral100: '#bdc1c6',
 } as const;

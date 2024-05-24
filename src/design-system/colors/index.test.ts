@@ -56,6 +56,8 @@ describe('colors', () => {
 
       neutral400: '#6f6c90',
       neutral300: '#d9dbe9',
+      neutral200: '#e8e8e8',
+      neutral100: '#bdc1c6',
     }).toMatchObject(colors);
   });
 });

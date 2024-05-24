@@ -47,16 +47,16 @@ const theme = {
 export type Theme = Record<'theme', typeof theme>;
 
 const SkipToMainContent = styled.a`
-  background-color: ${(props) => props.theme.colors.warning400};
-  border: solid 0.0625rem ${(props) => props.theme.colors.dark400};
-  color: ${(props) => props.theme.colors.white400};
-  border-radius: ${(props) => props.theme.typography.borderRadius.md};
-  font-size: ${(props) => props.theme.typography.bodyText.fontSize};
+  background-color: ${({ theme }) => theme.colors.warning400};
+  border: solid 0.0625rem ${({ theme }) => theme.colors.dark400};
+  color: ${({ theme }) => theme.colors.white400};
+  border-radius: ${({ theme }) => theme.typography.borderRadius.md};
+  font-size: ${({ theme }) => theme.typography.bodyText.fontSize};
   padding: 0.5rem;
   position: absolute;
   left: 0;
   top: -300px;
-  z-index: ${(props) => props.theme.typography.zIndexes.max};
+  z-index: ${({ theme }) => theme.typography.zIndexes.max};
   transition: top 0.5s ease-out;
   outline: none;
 

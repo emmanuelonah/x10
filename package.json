@@ -2,6 +2,7 @@
   "name": "x10",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "engines": {
     "node": ">=10"
   },
@@ -15,9 +16,9 @@
     "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:sb": "storybook build",
-    "pkgs:audit": " yarn audit --json > audit.json",
+    "pkgs:audit": "yarn audit --json > package-audit.json",
     "performance:audit": "lighthouse http://localhost:3000/",
-    "pre:commit": "yarn run  lint",
+    "pre:commit": "yarn run lint",
     "pre:push": "jest --watchAll=false && yarn run test:cv && yarn run build",
     "prepare": "husky"
   },

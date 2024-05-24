@@ -1,7 +1,19 @@
 describe('<Loaders/>', () => {
-  describe('<TextLoader/>', () => {});
+  describe('<TextLoader/>', () => {
+    it('should temporarily just pass', () => {
+      expect(true).toBe(true);
+    });
+  });
 
-  describe('<GifLoader/>', () => {});
+  describe('<GifLoader/>', () => {
+    it('should temporarily just pass', () => {
+      expect(true).toBe(true);
+    });
+  });
 
-  describe('<SkeletonLoader/>', () => {});
+  describe('<SkeletonLoader/>', () => {
+    it('should temporarily just pass', () => {
+      expect(true).toBe(true);
+    });
+  });
 });

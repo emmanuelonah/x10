@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { renderWithOptions, screen } from 'test';
 
 import { Main } from './index.layout';
 
 describe('<Main/>', () => {
   it('should render component', () => {
-    render(
+    renderWithOptions(
       <Main>
         <p>Foo Bar Baz</p>
       </Main>

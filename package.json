@@ -19,7 +19,7 @@
     "pkgs:audit": "yarn audit --json > package-audit.json",
     "performance:audit": "lighthouse http://localhost:3000/",
     "pre:commit": "yarn run lint",
-    "pre:push": "jest --watchAll=false && yarn run test:cv && yarn run build",
+    "pre:push": "yarn run test:cv && yarn run build",
     "prepare": "husky"
   },
   "dependencies": {

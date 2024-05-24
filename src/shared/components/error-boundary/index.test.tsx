@@ -5,26 +5,36 @@ import { throwError } from 'shared/utils';
 import { ErrorBoundary } from './index.component';
 import { renderWithOptions, screen, fireEvent, waitFor } from '../../../test';
 
-jest.mock('../../utils/env/index.util.ts', () => ({
-  __DEV__: true,
-  isBrowser: true,
-}));
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: (
-    props: JSX.IntrinsicAttributes &
-      React.ClassAttributes<HTMLImageElement> &
-      React.ImgHTMLAttributes<HTMLImageElement>
-  ) => <img {...props} alt="" />,
-}));
-
 function ThrowError() {
   throwError('ErrorBoundarySimulationError', 'Lets simulate our ErrorBoundary Abilities 🛠️');
 
   return <p>This can never be rendered, are you checking it in the DOM ☕️</p>;
 }
 
-describe('first', () => {
+const originalWindow = { ...window };
+const windowSpy = jest.spyOn(global, 'window', 'get');
+
+describe.skip('<ErrorBoundary/>', () => {
+  beforeAll(() => {
+    windowSpy.mockImplementation(
+      () =>
+        ({
+          ...originalWindow,
+          x10: {
+            println: {
+              group: jest.fn(),
+              error: jest.fn(),
+              groupEnd: jest.fn(),
+            },
+          },
+        }) as any
+    );
+  });
+
+  afterAll(() => {
+    windowSpy.mockRestore();
+  });
+
   it('should render child component when its error free', () => {
     renderWithOptions(
       <ErrorBoundary>

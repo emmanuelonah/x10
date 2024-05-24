@@ -1,3 +1,5 @@
+export {};
+
 describe('<Loaders/>', () => {
   describe('<TextLoader/>', () => {
     it('should temporarily just pass', () => {

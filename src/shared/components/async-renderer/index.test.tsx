@@ -1,10 +1,10 @@
-import { render, screen } from 'test';
+import { renderWithOptions, screen } from 'test';
 
 import { AsyncRenderer } from './index.component';
 
 describe('<AsyncRenderer/>', () => {
   it('should render loader when isLoading is true', () => {
-    render(
+    renderWithOptions(
       <AsyncRenderer
         isLoading={true}
         error={null}
@@ -17,7 +17,7 @@ describe('<AsyncRenderer/>', () => {
   });
 
   it('should render error message when error is not null', () => {
-    render(
+    renderWithOptions(
       <AsyncRenderer
         isLoading={false}
         error={new Error('Error message')}
@@ -29,7 +29,7 @@ describe('<AsyncRenderer/>', () => {
   });
 
   it('should render children when isLoading is false and error is null', () => {
-    render(
+    renderWithOptions(
       <AsyncRenderer
         isLoading={false}
         error={null}
@@ -41,7 +41,7 @@ describe('<AsyncRenderer/>', () => {
   });
 
   it('should render children when isLoading is false and error is null', () => {
-    render(
+    renderWithOptions(
       <AsyncRenderer isLoading={false} error={null} data={null}>
         Children
       </AsyncRenderer>

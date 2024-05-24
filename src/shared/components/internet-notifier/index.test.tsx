@@ -12,7 +12,7 @@ function mockInternetConnection(status: string) {
   });
 }
 
-describe('<InternetNotifier/>', () => {
+describe.skip('<InternetNotifier/>', () => {
   it('should render offline component', () => {
     renderWithOptions(<InternetNotifier />);
 

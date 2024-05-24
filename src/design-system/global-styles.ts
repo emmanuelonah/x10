@@ -56,7 +56,7 @@ const SkipToMainContent = styled.a`
   position: absolute;
   left: 0;
   top: -300px;
-  z-index: 100;
+  z-index: ${(props) => props.theme.typography.zIndexes.max};
   transition: top 0.5s ease-out;
   outline: none;
 

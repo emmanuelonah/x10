@@ -2,8 +2,6 @@ import * as Dialog from '@radix-ui/react-dialog';
 
 import { styled } from 'styled-components';
 
-import { designTokens } from 'design-system';
-
 const Content = styled(Dialog.Content)`
   background-color: ${({ theme }) => theme.colors.dark400};
   border-radius: ${({ theme }) => theme.typography.borderRadius.md};
@@ -16,7 +14,7 @@ const Content = styled(Dialog.Content)`
   position: fixed;
   top: 5px;
   right: 5px;
-  z-index: ${designTokens.typography.zIndexes.max};
+  z-index: ${({ theme }) => theme.typography.zIndexes.max};
 `;
 
 const Close = styled(Dialog.Close)`

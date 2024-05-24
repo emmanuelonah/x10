@@ -5,17 +5,17 @@ import { IHistory } from 'HistoryTypes';
 
 import { HistoryModel } from './index.model';
 
-export function useGetHistoryPresenter(id: number) {
+export function useGetHistoryPresenter() {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<IHistory | null>(null);
+  const [data, setData] = useState<Array<IHistory> | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
   useLiveQuery(async () => {
     setIsLoading(true);
 
     try {
-      const data = await HistoryModel.find(id);
-      setData(data!);
+      const data = await HistoryModel.all();
+      setData(data);
     } catch (error) {
       setError(error as Error);
     } finally {

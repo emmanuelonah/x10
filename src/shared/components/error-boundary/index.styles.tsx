@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Container } from 'shared/layouts';
+import { Container } from 'shared/layouts/container/index.layout';
 
 const Wrapper = styled(Container)`
   margin: 0 auto;

@@ -10,9 +10,9 @@ import { Seeder } from 'db/seeds';
 import { startMockServer } from 'test';
 import { GlobalStore } from 'global-store';
 import { reportWebVitals, Natives } from 'configs';
-import { ErrorBoundary, InternetNotifier } from 'shared/components';
 import { unregisterServiceWorker } from 'service-worker-registration';
 import { SkipToMainContent, GlobalStyles, theme } from 'design-system';
+import { ErrorBoundary, InternetNotifier, DocumentRightClick } from 'shared/components';
 
 Natives.bind();
 
@@ -29,6 +29,7 @@ startMockServer().finally(() => {
         <ThemeProvider theme={theme}>
           <GlobalStyles theme={theme} />
           <SkipToMainContent href="#main">Skip to main content</SkipToMainContent>
+          <DocumentRightClick />
           <QueryClientProvider client={queryClient}>
             <GlobalStore>
               <InternetNotifier />

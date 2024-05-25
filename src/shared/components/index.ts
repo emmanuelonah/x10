@@ -9,3 +9,4 @@ export * from './async-renderer/index.component';
 export * from './visually-hidden/index.component';
 export * from './accessible-icon/index.component';
 export * from './internet-notifier/index.component';
+export * from './document-rightclick/index.component';

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import iconRunning from 'design-system/assets/icn-running.gif';
+
+import { useBoolean } from 'shared/hooks';
 
 import { Button, Content, RunningGiphy } from './menu-widget.styles';
 
@@ -11,15 +13,11 @@ type MenuWidgetPropTypes = {
 };
 
 export function MenuWidget(props: MenuWidgetPropTypes) {
-  const [open, setOpen] = useState(props.open || false);
+  const [open, { toggle }] = useBoolean(props.open || false);
 
   return (
     <>
-      <Button
-        type="button"
-        title="Click to view menu items"
-        onClick={() => setOpen((prev) => !prev)}
-      >
+      <Button type="button" title="Click to view menu items" onClick={toggle}>
         <HamburgerMenuIcon width="20px" height="20px" />
       </Button>
       <Content open={open}>

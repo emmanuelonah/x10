@@ -12,6 +12,7 @@ export function Router() {
       <Main>
         <Routes>
           <Route path={ROUTES.home} element={<Home />} />
+          <Route path={ROUTES.searchResult} element={<Home />} />
           <Route path={ROUTES.notFound} element={<NotFound />} />
         </Routes>
       </Main>

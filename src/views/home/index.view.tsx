@@ -1,5 +1,17 @@
 import React from 'react';
 
+import { config } from './config';
+import { useSearchType } from './useSearchType';
+
 export function Home() {
-  return <h1>Welcome Home</h1>;
+  const searchType = useSearchType();
+
+  const Page = config[searchType].page;
+
+  return (
+    <>
+      Welcome Home
+      <Page />
+    </>
+  );
 }

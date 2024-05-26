@@ -49,7 +49,6 @@ export type Theme = Record<'theme', typeof theme>;
 const SkipToMainContent = styled.a`
   background-color: ${({ theme }) => theme.colors.warning400};
   border: solid 0.0625rem ${({ theme }) => theme.colors.dark400};
-  color: ${({ theme }) => theme.colors.white400};
   border-radius: ${({ theme }) => theme.typography.borderRadius.md};
   font-size: ${({ theme }) => theme.typography.bodyText.fontSize};
   padding: 0.5rem;
@@ -78,6 +77,7 @@ const GlobalStyles = createGlobalStyle<Theme>`
     }
 
     html, body {
+        color: ${({ theme }) => theme.colors.neutral200};
         font-family: ${({ theme }) => theme.typography.fontFamilies.primary};
         font-size: ${({ theme }) => theme.typography.bodyText.fontSize};
         font-weight: ${({ theme }) => theme.typography.bodyText.fontWeight};

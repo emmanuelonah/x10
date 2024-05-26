@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Heading1 } from 'shared/components';
 
 const Container = styled.div`
-  color: ${({ theme }) => theme.colors.neutral200};
   text-align: center;
 `;
 
@@ -26,7 +25,6 @@ const GoHome = styled.button`
   margin: 1rem auto;
   background-color: transparent;
   border-radius: 5px;
-  color: ${({ theme }) => theme.colors.neutral200};
   display: flex;
   justify-content: center;
   align-items: center;

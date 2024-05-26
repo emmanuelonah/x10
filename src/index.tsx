@@ -12,7 +12,7 @@ import { GlobalStore } from 'global-store';
 import { reportWebVitals, Natives } from 'configs';
 import { unregisterServiceWorker } from 'service-worker-registration';
 import { SkipToMainContent, GlobalStyles, theme } from 'design-system';
-import { ErrorBoundary, InternetNotifier, DocumentRightClick } from 'shared/components';
+import { ErrorBoundary, InternetNotifier } from 'shared/components';
 
 Natives.bind();
 
@@ -29,7 +29,6 @@ startMockServer().finally(() => {
         <ThemeProvider theme={theme}>
           <GlobalStyles theme={theme} />
           <SkipToMainContent href="#main">Skip to main content</SkipToMainContent>
-          <DocumentRightClick />
           <QueryClientProvider client={queryClient}>
             <GlobalStore>
               <InternetNotifier />

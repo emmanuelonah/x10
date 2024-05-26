@@ -6,7 +6,6 @@ const Content = styled(Dialog.Content)`
   background-color: ${({ theme }) => theme.colors.dark400};
   border-radius: ${({ theme }) => theme.typography.borderRadius.md};
   border: solid 2px ${({ theme }) => theme.colors.dark300};
-  color: ${({ theme }) => theme.colors.neutral200};
   width: 98%;
   max-width: 400px;
   height: 90px;

@@ -6,7 +6,7 @@ const dim = keyframes`
   }
 
   100% {
-    color: hsl(200, 20%, 95%);
+    color: #000;
   }
 `;
 

@@ -20,7 +20,7 @@ export function MenuWidget(props: MenuWidgetPropTypes) {
       <Button type="button" title="Click to view menu items" onClick={toggle}>
         <HamburgerMenuIcon width="20px" height="20px" />
       </Button>
-      <Content open={open}>
+      <Content open={open} closeOnClickOutside onClose={toggle}>
         <h3>Menu Items Coming soon</h3>
         <RunningGiphy src={iconRunning} alt="Super fast search" />
       </Content>

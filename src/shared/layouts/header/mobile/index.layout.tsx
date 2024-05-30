@@ -2,12 +2,13 @@ import React from 'react';
 
 import { ROUTES } from 'routes/routes';
 
+import icnLogo from 'design-system/assets/icn-logo.png';
+
 import { useClassName } from './useClassName';
-import { MoreWidget } from './widgets/more-widget';
 import { ProfileWidget } from './widgets/profile-widget';
 import { HistoryWidget } from './widgets/history-widget';
 import { MenuWidget } from './widgets/menu-widget.widget';
-import { Header, NavItem, Tab, TabItem } from './index.styles';
+import { Header, NavItem, Tab, TabItem, Logo } from './index.styles';
 
 export function MobileHeader() {
   const className = useClassName();
@@ -17,7 +18,7 @@ export function MobileHeader() {
       <nav>
         <NavItem>
           <div>
-            <MoreWidget />
+            <Logo src={icnLogo} alt="Logo" />
           </div>
           <div>
             <HistoryWidget />

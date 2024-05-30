@@ -8,6 +8,10 @@ const Header = styled.header`
   padding: 1.5rem;
 `;
 
+const Logo = styled.img`
+  width: 40px;
+`;
+
 const NavItem = styled.div`
   display: flex;
   justify-content: space-between;
@@ -66,4 +70,4 @@ const TabItem = styled(NavLink)`
   }
 `;
 
-export { Header, NavItem, Tab, TabItem };
+export { Header, NavItem, Tab, TabItem, Logo };

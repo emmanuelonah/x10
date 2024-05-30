@@ -30,19 +30,22 @@ export const useBaseLogic = ({ isLoading, benefitOf = 2000 }: ArgType) => {
   /**
    * Tell accessibility gadget users that loading is done
    */
+  const shouldResetLoading = loading && !isLoading && !isDoneLoading;
+  const shouldResetDoneLoading = isDoneLoading;
+
   useEffect(() => {
-    if (loading && !isLoading && !isDoneLoading) {
+    if (shouldResetLoading) {
       setLoading(false);
       setDoneLoading(true);
     }
-  }, [isDoneLoading, isLoading, loading]);
+  }, [shouldResetLoading]);
 
   /**
    * Turn isDoneLoading to false after 2000ms
    */
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isDoneLoading) timer = setTimeout(() => setDoneLoading(false), 2000);
+    if (shouldResetDoneLoading) timer = setTimeout(() => setDoneLoading(false), 2000);
     return () => clearTimeout(timer);
   });
 

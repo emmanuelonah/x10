@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ErrorNode } from './index.styles';
+
 type PrimitivePPropTypes = React.ComponentPropsWithoutRef<'p'>;
 type ErrorTextElement = React.ElementRef<'p'>;
 

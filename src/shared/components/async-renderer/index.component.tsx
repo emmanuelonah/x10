@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
+import { Empty } from 'shared/components/empty/index.component';
 import { TextLoader } from 'shared/components/loader/index.component';
 import { ErrorText } from 'shared/components/error-text/index.component';
 
@@ -16,6 +17,14 @@ interface AsyncRendererPropTypes<DataType> extends Omit<PrimitiveDivPropTypes, '
 
 export const AsyncRenderer = React.forwardRef<AsyncRendererElement, AsyncRendererPropTypes<any>>(
   ({ isLoading, error, data, loader, children, ...rest }, forwardedRef) => {
+    const isEmpty = useMemo(() => {
+      if (Array.isArray(data)) return !data.length;
+
+      if (typeof data === 'object') return !Object.keys(data).length;
+
+      return !data;
+    }, [data]);
+
     if (isLoading) {
       return (
         <div {...rest} ref={forwardedRef}>
@@ -31,6 +40,8 @@ export const AsyncRenderer = React.forwardRef<AsyncRendererElement, AsyncRendere
         </div>
       );
     }
+
+    if (isEmpty) return <Empty />;
 
     return (
       <div {...rest} ref={forwardedRef}>

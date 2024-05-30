@@ -5,7 +5,7 @@ import { IHistory } from 'HistoryTypes';
 
 import { HistoryModel } from './index.model';
 
-export function useGetHistoryPresenter() {
+export function useGetHistoriesPresenter() {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<Array<IHistory> | null>(null);
   const [error, setError] = useState<Error | null>(null);
@@ -23,5 +23,5 @@ export function useGetHistoryPresenter() {
     }
   });
 
-  return { isLoading, data, error };
+  return { isLoading, data, error, setData };
 }

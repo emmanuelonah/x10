@@ -1,5 +1,7 @@
+export * from './empty/index.component';
 export * from './portal/index.component';
 export * from './loader/index.component';
+export * from './history/index.component';
 export * from './headings/index.component';
 export * from './error-text/index.component';
 export * from './search-widget/index.component';

@@ -20,7 +20,7 @@ export const AsyncRenderer = React.forwardRef<AsyncRendererElement, AsyncRendere
     const isEmpty = useMemo(() => {
       if (Array.isArray(data)) return !data.length;
 
-      if (typeof data === 'object') return !Object.keys(data).length;
+      if (typeof data === 'object') return !Object.keys(data || {}).length;
 
       return !data;
     }, [data]);

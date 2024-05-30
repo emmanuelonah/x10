@@ -42,7 +42,7 @@ describe('<AsyncRenderer/>', () => {
 
   it('should render children when isLoading is false and error is null', () => {
     renderWithOptions(
-      <AsyncRenderer isLoading={false} error={null} data={null}>
+      <AsyncRenderer isLoading={false} error={null} data={[{}]}>
         Children
       </AsyncRenderer>
     );

@@ -2,11 +2,11 @@ import { useState, useCallback } from 'react';
 
 import { HistoryModel } from './index.model';
 
-export function useDeleteAllHistoryPresenter() {
+export function useDeleteAllHistoriesPresenter() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const deleteHistory = useCallback(async () => {
+  const deleteAllHistories = useCallback(async () => {
     setIsLoading(true);
 
     try {
@@ -18,5 +18,5 @@ export function useDeleteAllHistoryPresenter() {
     }
   }, []);
 
-  return { deleteHistory, isLoading, error };
+  return { deleteAllHistories, isLoading, error };
 }

@@ -23,5 +23,5 @@ export function useGetHistoriesPresenter() {
     }
   });
 
-  return { isLoading, data, error, setData };
+  return { isLoading, data, error };
 }

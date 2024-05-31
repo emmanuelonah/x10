@@ -7,12 +7,15 @@ import { IHistory } from 'HistoryTypes';
 
 import { HistoryItemWrapper } from './index.styles';
 
-export function HistoryItem(props: IHistory) {
+interface HistoryItemPropTypes extends IHistory {
+  onDelete(id: number): void;
+}
+export function HistoryItem({ id, date, searchedTerm, onDelete }: HistoryItemPropTypes) {
   return (
     <HistoryItemWrapper>
-      <time>{new Date(props.date).toLocaleDateString()}</time>
-      <Link to="#">{props.searchedTerm}</Link>
-      <button type="button" aria-label="Click to delete">
+      <time>{new Date(date).toLocaleDateString()}</time>
+      <Link to="#">{searchedTerm}</Link>
+      <button type="button" aria-label="Delete" onClick={() => onDelete(id)}>
         <TrashIcon /> <span>Clear</span>
       </button>
     </HistoryItemWrapper>

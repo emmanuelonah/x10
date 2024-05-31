@@ -1,7 +1,13 @@
-export {};
+import React from 'react';
+
+import { renderWithOptions } from 'test';
+
+import { Header } from './index.layout';
 
 describe('<Header/>', () => {
-  it('should temporarily just pass', () => {
-    expect(true).toBe(true);
+  it('should render layout', () => {
+    const { container } = renderWithOptions(<Header />);
+
+    expect(container).not.toBeEmptyDOMElement();
   });
 });

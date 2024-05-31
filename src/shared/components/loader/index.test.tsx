@@ -1,21 +1,31 @@
-export {};
+import React from 'react';
+
+import { renderWithOptions, screen, act } from 'test';
+
+import * as Loader from './index.component';
 
 describe('<Loaders/>', () => {
   describe('<TextLoader/>', () => {
-    it('should temporarily just pass', () => {
-      expect(true).toBe(true);
+    it('should render component', async () => {
+      renderWithOptions(<Loader.TextLoader isLoading />);
+
+      await act(async () => {
+        await new Promise((r) => setTimeout(r, 2000));
+      });
+
+      expect(screen.getByText('Loading...')).toBeInTheDocument();
     });
   });
 
   describe('<GifLoader/>', () => {
-    it('should temporarily just pass', () => {
-      expect(true).toBe(true);
-    });
-  });
+    it('should render component', async () => {
+      const { container } = renderWithOptions(<Loader.GifLoader isLoading />);
 
-  describe('<SkeletonLoader/>', () => {
-    it('should temporarily just pass', () => {
-      expect(true).toBe(true);
+      await act(async () => {
+        await new Promise((r) => setTimeout(r, 2000));
+      });
+
+      expect(container).not.toBeEmptyDOMElement();
     });
   });
 });

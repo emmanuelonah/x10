@@ -7,7 +7,7 @@ import { Heading4, AsyncRenderer } from 'shared/components';
 import { useHistories } from './useHistories';
 import { SearchBox } from './searchbox.component';
 import { HistoryItem } from './history-item.component';
-import { HistoryWrapper, CloseButton, HistoriesList, Row1 } from './index.styles';
+import { HistoryWrapper, CloseButton, HistoriesList, Row1, DeleteAllButton } from './index.styles';
 
 type HistoryPropTypes = {
   open: boolean;
@@ -16,7 +16,7 @@ type HistoryPropTypes = {
 };
 
 export function History({ open, onClose, className }: HistoryPropTypes) {
-  const { search, ...historiesRequest } = useHistories();
+  const { search, deleteAHistory, deleteAll, ...historiesRequest } = useHistories();
 
   return (
     <HistoryWrapper open={open} closeOnClickOutside onClose={onClose} className={className}>
@@ -31,11 +31,15 @@ export function History({ open, onClose, className }: HistoryPropTypes) {
         <AsyncRenderer {...historiesRequest}>
           {historiesRequest.data?.map((history) => (
             <li key={history.id}>
-              <HistoryItem {...history} />
+              <HistoryItem {...history} onDelete={deleteAHistory} />
             </li>
           ))}
         </AsyncRenderer>
       </HistoriesList>
+
+      <DeleteAllButton type="button" onClick={deleteAll}>
+        Delete All
+      </DeleteAllButton>
     </HistoryWrapper>
   );
 }

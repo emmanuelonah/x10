@@ -16,7 +16,7 @@ export function MobileHeader() {
   return (
     <Header>
       <nav>
-        <NavItem>
+        <NavItem data-testid="navItems">
           <div>
             <Logo src={icnLogo} alt="Logo" />
           </div>
@@ -27,7 +27,7 @@ export function MobileHeader() {
           </div>
         </NavItem>
 
-        <Tab>
+        <Tab data-testid="tabItems">
           <TabItem to={ROUTES.textSearch} className={className('textSearch')}>
             Text
           </TabItem>

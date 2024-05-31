@@ -83,4 +83,20 @@ const HistoriesList = styled.ul`
   }
 `;
 
-export { SearchInput, HistoryWrapper, CloseButton, HistoriesList, Row1, HistoryItemWrapper };
+const DeleteAllButton = styled.button`
+  color: ${({ theme }) => theme.colors.error400};
+  background-color: transparent;
+  text-align: center;
+  border: 0;
+  width: 100%;
+`;
+
+export {
+  SearchInput,
+  HistoryWrapper,
+  CloseButton,
+  HistoriesList,
+  Row1,
+  HistoryItemWrapper,
+  DeleteAllButton,
+};

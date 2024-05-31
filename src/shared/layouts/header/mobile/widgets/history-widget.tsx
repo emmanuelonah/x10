@@ -11,7 +11,7 @@ export function HistoryWidget() {
 
   return (
     <>
-      <Button type="button" title="Click to view search history" onClick={toggle}>
+      <Button type="button" title="View search history" onClick={toggle}>
         <ClockIcon width="20px" height="20px" />
       </Button>
       <Content open={open} onClose={toggle} className="content" />

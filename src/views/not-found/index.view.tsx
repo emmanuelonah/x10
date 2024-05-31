@@ -23,7 +23,7 @@ export function NotFound() {
         <br />
         some mistakes, you can fix this
       </Paragraph2>
-      <GoHome type="button" onClick={() => navigate(ROUTES.home)}>
+      <GoHome type="button" onClick={() => navigate(ROUTES.home, { replace: true })}>
         <HomeIcon />
         <span>Go Home</span>
       </GoHome>

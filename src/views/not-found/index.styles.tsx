@@ -25,6 +25,7 @@ const GoHome = styled.button`
   margin: 1rem auto;
   background-color: transparent;
   border-radius: 5px;
+  color: ${({ theme }) => theme.colors.neutral400};
   display: flex;
   justify-content: center;
   align-items: center;

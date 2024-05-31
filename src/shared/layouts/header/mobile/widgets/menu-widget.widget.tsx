@@ -17,7 +17,7 @@ export function MenuWidget(props: MenuWidgetPropTypes) {
 
   return (
     <>
-      <Button type="button" title="Click to view menu items" onClick={toggle}>
+      <Button type="button" title="View menu items" onClick={toggle}>
         <HamburgerMenuIcon width="20px" height="20px" />
       </Button>
       <Content open={open} closeOnClickOutside onClose={toggle}>

@@ -23,7 +23,7 @@ export function InternetNotifier() {
               <CrossCircledIcon
                 width="25px"
                 height="20px"
-                aria-label="Click to close modal"
+                aria-label="Close modal"
                 color={designTokens.colors.dark500}
               />
             </Close>

@@ -1,61 +1,55 @@
 import React from 'react';
 
-import { throwError } from 'shared/utils';
+import { renderWithOptions, screen } from 'test';
 
 import { ErrorBoundary } from './index.component';
-import { renderWithOptions, screen, fireEvent, waitFor } from '../../../test';
 
-function ThrowError() {
-  throwError('ErrorBoundarySimulationError', 'Lets simulate our ErrorBoundary Abilities 🛠️');
+const Bomb = () => {
+  throw new Error('💣');
+};
 
-  return <p>This can never be rendered, are you checking it in the DOM ☕️</p>;
-}
+const Safe = () => <div>Everything is safe.</div>;
 
-const originalWindow = { ...window };
-const windowSpy = jest.spyOn(global, 'window', 'get');
+let originalX10: any;
 
-describe.skip('<ErrorBoundary/>', () => {
-  beforeAll(() => {
-    windowSpy.mockImplementation(
-      () =>
-        ({
-          ...originalWindow,
-          x10: {
-            println: {
-              group: jest.fn(),
-              error: jest.fn(),
-              groupEnd: jest.fn(),
-            },
-          },
-        }) as any
-    );
+describe('<ErrorBoundary/>', () => {
+  beforeEach(() => {
+    originalX10 = window.x10;
+
+    window.x10 = {
+      println: {
+        group: jest.fn(),
+        error: jest.fn(),
+        groupEnd: jest.fn(),
+      } as any,
+    };
   });
 
-  afterAll(() => {
-    windowSpy.mockRestore();
+  afterEach(() => {
+    window.x10 = originalX10;
   });
 
-  it('should render child component when its error free', () => {
-    renderWithOptions(
+  it('should display an error message when a child component throws', () => {
+    jest.spyOn(console, 'error');
+
+    const { container } = renderWithOptions(
       <ErrorBoundary>
-        <p>Foo Bar Baz</p>
+        <Bomb />
       </ErrorBoundary>
     );
 
-    expect(screen.getByText('Foo Bar Baz')).toBeInTheDocument();
+    expect(container).toHaveTextContent('Oops, compilation error');
+    expect(screen.getByText('Try again?')).toBeInTheDocument();
   });
 
-  it('should render ErrorBoundary component when child component is not error free', async () => {
+  it('should not display an error message when a child component does not throw', () => {
     renderWithOptions(
       <ErrorBoundary>
-        <ThrowError />
+        <Safe />
       </ErrorBoundary>
     );
 
-    expect(screen.getByText('Oops, compilation error </>')).toBeInTheDocument();
-
-    await waitFor(() => {
-      fireEvent.click(screen.getByText('Try again?'));
-    });
+    expect(screen.getByText('Everything is safe.')).toBeInTheDocument();
+    expect(screen.queryByText('Oops, compilation error')).not.toBeInTheDocument();
   });
 });

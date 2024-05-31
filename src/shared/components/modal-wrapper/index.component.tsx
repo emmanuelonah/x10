@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
-import { Portal } from 'shared/components';
 import { useComposeRefs } from 'shared/hooks';
+import { Portal } from 'shared/components/portal/index.component';
 
 import { useAction } from './useAction';
 

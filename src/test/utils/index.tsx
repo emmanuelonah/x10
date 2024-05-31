@@ -1,6 +1,9 @@
 import React from 'react';
 
+import userEvent from '@testing-library/user-event';
+
 import { ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 import { render, RenderOptions } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -15,12 +18,14 @@ export * from '@testing-library/react';
  */
 function Wrapper({ children }: { children: React.ReactElement }) {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles theme={theme} />
-      <QueryClientProvider client={new QueryClient()}>
-        <GlobalStore>{children}</GlobalStore>
-      </QueryClientProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles theme={theme} />
+        <QueryClientProvider client={new QueryClient()}>
+          <GlobalStore>{children}</GlobalStore>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
@@ -30,9 +35,11 @@ function Wrapper({ children }: { children: React.ReactElement }) {
  * @param {children:React.ReactNode}
  * @returns a transpiled reactNode object
  */
-export function renderWithOptions(ui: React.ReactElement, opts?: RenderOptions) {
+function renderWithOptions(ui: React.ReactElement, opts?: RenderOptions) {
   return render(ui, {
     wrapper: Wrapper as React.JSXElementConstructor<{ children: React.ReactElement }>,
     ...opts,
   });
 }
+
+export { userEvent, renderWithOptions };

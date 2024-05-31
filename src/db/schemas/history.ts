@@ -12,8 +12,10 @@ const historiesTable = {
   histories: '++id, date',
 };
 
-export default {
+const history = {
   name: 'histories',
   schema: HistorySchema,
   table: historiesTable,
 };
+
+export default history;

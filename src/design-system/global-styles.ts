@@ -149,6 +149,15 @@ const GlobalStyles = createGlobalStyle<Theme>`
     textarea {
         font-size: 1rem;
     }
+
+
+    /**
+     * Override the default style of storybook tool
+     */
+    .sb-show-main.sb-main-padded {
+        padding:0 !important;
+   
+    }
 `;
 
 export { SkipToMainContent, GlobalStyles, theme };

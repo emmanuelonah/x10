@@ -41,6 +41,8 @@ x10 is a revolutionary search engine that leverages the power of Chrome, Bing, a
 9. [Git Action](https://docs.github.com/en/actions)
 
 10. [Storybook](https://storybook.js.org/)
+11. [GEMINI API](https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=rest)
+12. [OpenAI API](https://platform.openai.com/docs/overview)
 
 ## Architecture used
 
@@ -72,7 +74,7 @@ yarn run test:coverage``` script
 
 - [Local URL](http://localhost:3000)
 
-- [Staging URL](https://x10-staging.netlify.app/)
+- [Staging URL](https://x10.netlify.app/)
 
 - [Production URL](https://x10.dev)
 

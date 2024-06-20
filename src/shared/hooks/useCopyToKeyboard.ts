@@ -6,6 +6,8 @@ enum COPY_STATUS {
   FAILED = 'FAILED',
 }
 
+type CopyStatus = keyof typeof COPY_STATUS;
+
 enum COPY_TEXT {
   NOT_COPIED = 'Tap to copy link',
   COPIED = 'Link copied',
@@ -13,9 +15,9 @@ enum COPY_TEXT {
 }
 
 function useCopyToKeyboard(text: string) {
-  const [status, setStatus] = useState(COPY_STATUS.NOT_COPIED);
+  const [status, setStatus] = useState<CopyStatus>(COPY_STATUS.NOT_COPIED);
 
-  const statusText = COPY_TEXT[status];
+  const statusText: string = COPY_TEXT[status];
 
   const copyText = useCallback(async () => {
     try {

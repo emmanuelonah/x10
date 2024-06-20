@@ -121,5 +121,29 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/.storybook",
+      "/coverage",
+      "src/app.tsx",
+      "src/index.tsx",
+      "src/service-worker-registration.ts",
+      "src/service-worker.ts",
+      "src/setupTests.ts",
+      "\\.svg\\.(ts|tsx)$",
+      "\\.stories\\.(ts|tsx)$",
+      "<rootDir>/src/configs/",
+      "<rootDir>/src/routes/index.route.tsx",
+      "<rootDir>/src/shared/models/",
+      "<rootDir>/src/design-system/",
+      "<rootDir>/src/test/",
+      "<rootDir>/src/db/",
+      "<rootDir>/public/",
+      "<rootDir>/dist/",
+      "<rootDir>/build/",
+      "<rootDir>/src/global-store"
+    ]
   }
 }

@@ -68,20 +68,21 @@ export function SocialShare({ url, title }: SocialSharePropTypes) {
         </Heading>
 
         <Body>
-          <FacebookShareButton url={url} title={title}>
+          <FacebookShareButton url={url} title={title} data-testid="facebook">
             <FacebookIcon {...iconProps} />
           </FacebookShareButton>
-          <WhatsappShareButton url={url}>
+          <WhatsappShareButton url={url} data-testid="whatsApp">
             <WhatsappIcon {...iconProps} />
           </WhatsappShareButton>
-          <TwitterShareButton url={url} title={title}>
+          <TwitterShareButton url={url} title={title} data-testid="twitter">
             <XIcon {...iconProps} />
           </TwitterShareButton>
           <EmailShareButton
             url={url}
             subject={title}
-            body="Sent from x10 search engine"
             title={title}
+            body="Sent from x10 search engine"
+            data-testid="email"
           >
             <EmailIcon {...iconProps} />
           </EmailShareButton>

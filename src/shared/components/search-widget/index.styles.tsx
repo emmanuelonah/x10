@@ -52,7 +52,7 @@ const ImageInputLabel = styled.label`
 
 const SubmitButton = styled.button`
   background-color: transparent;
-  border: solid 2px #575a7b;
+  border: solid 2px ${({ theme }) => theme.colors.grey400};
   color: ${({ theme }) => theme.colors.neutral200};
   border-radius: 50%;
   height: 30px;

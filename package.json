@@ -16,10 +16,12 @@
     "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:sb": "storybook build",
+    "deploy": "git checkout main && git pull && pre:deploy",
     "pkgs:audit": "yarn audit --json > package-audit.json",
     "performance:audit": "lighthouse http://localhost:3000/",
     "pre:commit": "yarn run lint",
     "pre:push": "yarn run test:cv && yarn run build",
+    "pre:deploy": "pre:commit && pre:push",
     "prepare": "husky"
   },
   "dependencies": {

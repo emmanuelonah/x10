@@ -7,16 +7,19 @@ const Button = styled.button`
 `;
 
 const Content = styled(ModalWrapper)`
-  background-color: white;
-  border: solid 3px #eee;
+  border-top-left-radius: 1rem;
+  border-top: solid 2px ${({ theme }) => theme.colors.grey400};
+  border-left: solid 2px ${({ theme }) => theme.colors.grey400};
+  border-bottom: solid 2px ${({ theme }) => theme.colors.grey400};
+  padding: 1.5rem 1rem;
+  color: #e8eaec;
+  background-color: #171719;
   width: 80%;
   position: fixed;
   z-index: ${({ theme }) => theme.typography.zIndexes.modal};
   top: 100px;
   right: 0;
   height: 100%;
-  border-top-left-radius: 10px;
-  padding: 1.5rem;
 `;
 
 const RunningGiphy = styled.img`

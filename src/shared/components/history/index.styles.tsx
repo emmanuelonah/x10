@@ -23,7 +23,7 @@ const HistoryItemWrapper = styled.div`
 
   & time {
     font-size: 0.8rem;
-    color: #575a7b;
+    color: ${({ theme }) => theme.colors.grey400};
   }
 
   & a {
@@ -47,7 +47,7 @@ const HistoryItemWrapper = styled.div`
  * Styles for index.component.tsx
  */
 const HistoryWrapper = styled(ModalWrapper)`
-  border: solid 2px #575a7b;
+  border: solid 2px ${({ theme }) => theme.colors.grey400};
   border-radius: 1rem;
   padding: 1.5rem 1rem;
   color: #e8eaec;

@@ -45,6 +45,7 @@ describe('colors', () => {
       dark200: '#999999',
       dark100: '#C9C9C9',
 
+      grey400: '#575a7b',
       grey300: '#242426',
       grey200: '#4f4e50',
       grey100: '#cacacb',

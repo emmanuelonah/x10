@@ -65,7 +65,7 @@ const TabItem = styled(NavLink)`
   }
 
   &.active {
-    background-color: #3a3f50;
+    background-color: ${({ theme }) => theme.colors.grey400};
     border-radius: 30px;
   }
 `;

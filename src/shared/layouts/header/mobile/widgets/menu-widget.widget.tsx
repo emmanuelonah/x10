@@ -13,7 +13,7 @@ type MenuWidgetPropTypes = {
 };
 
 export function MenuWidget(props: MenuWidgetPropTypes) {
-  const [open, { toggle }] = useBoolean(props.open || false);
+  const [open, { toggle }] = useBoolean(props.open);
 
   return (
     <>

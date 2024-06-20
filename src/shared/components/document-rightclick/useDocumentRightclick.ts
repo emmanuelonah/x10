@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { useBoolean } from 'shared/hooks';
 
 export function useDocumentRightClick() {
-  const [open, { toggle }] = useBoolean(false);
+  const [open, { toggle }] = useBoolean();
   const ref = useRef<HTMLDivElement>(null);
 
   /**

@@ -1,3 +1,4 @@
+export * from './search-widget';
 export * from './empty/index.component';
 export * from './portal/index.component';
 export * from './loader/index.component';

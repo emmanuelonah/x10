@@ -123,6 +123,9 @@
     ]
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(axios)/)"
+    ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/.storybook",

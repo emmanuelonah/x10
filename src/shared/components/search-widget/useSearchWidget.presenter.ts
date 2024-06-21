@@ -1,14 +1,17 @@
 import { useCallback } from 'react';
 
-export function useSearchWidgetPresenter() {
-  return useCallback((event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+type OnSubmit = <P>(formData: Record<string, FormDataEntryValue>) => Promise<P>;
+export function useSearchWidgetPresenter(onSubmit?: OnSubmit) {
+  return useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
 
-    const form = new FormData(event.currentTarget);
-    const formData = Object.fromEntries(form.entries());
+      const form = new FormData(event.currentTarget);
+      const formData = Object.fromEntries(form.entries());
 
-    window.x10.println?.info('Form data:', formData);
-
-    event.currentTarget.reset();
-  }, []);
+      await onSubmit?.(formData);
+      event.currentTarget.reset();
+    },
+    [onSubmit]
+  );
 }

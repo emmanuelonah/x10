@@ -10,12 +10,13 @@ export function createContext<ContextType>(displayName: string) {
   function useContext() {
     const context = React.useContext(Context);
 
-    if (!context)
+    if (!context) {
       throwError(
         'UseContextError',
         'You can not use context outside its Provider component',
         useContext
       );
+    }
 
     return context;
   }

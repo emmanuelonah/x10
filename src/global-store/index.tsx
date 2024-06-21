@@ -25,7 +25,7 @@
 import React from 'react';
 
 import { createContext } from 'shared/utils';
-import {} from 'shared/models';
+import { SearchWidgetStore } from 'shared/components';
 
 /**
  * Context
@@ -45,7 +45,11 @@ type GlobalStorePropTypes = {
 function GlobalStore(props: GlobalStorePropTypes) {
   const values = React.useMemo<GlobalStoreContextType>(() => ({}), []);
 
-  return <GlobalStoreProvider value={values}>{props.children}</GlobalStoreProvider>;
+  return (
+    <GlobalStoreProvider value={values}>
+      <SearchWidgetStore>{props.children}</SearchWidgetStore>
+    </GlobalStoreProvider>
+  );
 }
 
 export { GlobalStore, useGlobalStore };

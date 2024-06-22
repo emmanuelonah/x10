@@ -1,5 +1,7 @@
-import React, { useId } from 'react';
+import React, { useId, useRef } from 'react';
 import { ArrowRightIcon, ImageIcon } from '@radix-ui/react-icons';
+
+import { useComposeRefs } from 'shared/hooks';
 
 import { useSearchWidgetContext } from '.';
 import { useSearchWidgetPresenter } from './useSearchWidget.presenter';
@@ -14,11 +16,13 @@ interface SearchWidgetPropTypes extends Omit<PrimitiveFormPropTypes, 'onSubmit'>
 export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPropTypes>(
   function SearchWidget(props, forwardedRef) {
     const imgSearchId = useId();
-    const formSubmitHandler = useSearchWidgetPresenter(props.onSubmit);
+    const formRef = useRef<HTMLFormElement>(null);
+    const composedRefs = useComposeRefs<HTMLFormElement>(formRef, forwardedRef);
+    const formSubmitHandler = useSearchWidgetPresenter(formRef, props.onSubmit);
     const { searchQuery, handleImageChange, handleSearchQueryChange } = useSearchWidgetContext();
 
     return (
-      <Form {...props} ref={forwardedRef} onSubmit={formSubmitHandler}>
+      <Form {...props} ref={composedRefs} onSubmit={formSubmitHandler}>
         <ChatBox
           name="textSearch"
           autoCorrect="on"

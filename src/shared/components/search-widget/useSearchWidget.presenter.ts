@@ -1,7 +1,10 @@
 import { useCallback } from 'react';
 
 type OnSubmit = <P>(formData: Record<string, FormDataEntryValue>) => Promise<P>;
-export function useSearchWidgetPresenter(onSubmit?: OnSubmit) {
+export function useSearchWidgetPresenter(
+  formRef: React.RefObject<HTMLFormElement>,
+  onSubmit?: OnSubmit
+) {
   return useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -10,8 +13,8 @@ export function useSearchWidgetPresenter(onSubmit?: OnSubmit) {
       const formData = Object.fromEntries(form.entries());
 
       await onSubmit?.(formData);
-      event.currentTarget.reset();
+      formRef.current?.reset();
     },
-    [onSubmit]
+    [formRef, onSubmit]
   );
 }

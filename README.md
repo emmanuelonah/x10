@@ -76,7 +76,7 @@ yarn run test:coverage``` script
 
 - [Staging URL](https://x10.netlify.app/)
 
-- [Production URL](https://x10.dev)
+- [Production URL](https://x10.com)
 
 ## PR convention
 

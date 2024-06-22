@@ -8,10 +8,5 @@ export function Home() {
 
   const Page = config[searchType].page;
 
-  return (
-    <>
-      Welcome Home
-      <Page />
-    </>
-  );
+  return <Page />;
 }

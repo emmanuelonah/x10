@@ -37,7 +37,7 @@ export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPr
           onChange={handleSearchQueryChange}
         ></ChatBox>
         <ImageInputLabel htmlFor={imgSearchId}>
-          <ImageIcon height="30px" width="30px" />
+          <ImageIcon height="25px" width="25px" />
         </ImageInputLabel>
         <ImageInput
           id={imgSearchId}
@@ -48,7 +48,7 @@ export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPr
           onChange={handleImageChange}
         />
         <SubmitButton type="submit" aria-label="Submit">
-          <ArrowRightIcon />
+          <ArrowRightIcon height="25px" width="25px" />
         </SubmitButton>
       </Form>
     );

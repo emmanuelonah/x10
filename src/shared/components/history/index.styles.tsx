@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { ModalWrapper } from 'shared/components/modal-wrapper/index.component';
-
 /**
  * Styles for searchbox.component.tsx
  */
@@ -27,14 +25,14 @@ const HistoryItemWrapper = styled.div`
   }
 
   & a {
-    color: #e8eaec;
+    color: ${({ theme }) => theme.colors.white50};
     padding: 1rem 0;
   }
 
   & button {
     border: 0;
     background-color: transparent;
-    color: #e8eaec;
+    color: ${({ theme }) => theme.colors.white50};
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -43,41 +41,12 @@ const HistoryItemWrapper = styled.div`
   }
 `;
 
-/**
- * Styles for index.component.tsx
- */
-const HistoryWrapper = styled(ModalWrapper)`
-  border: solid 2px ${({ theme }) => theme.colors.grey400};
-  border-radius: 1rem;
-  padding: 1.5rem 1rem;
-  color: #e8eaec;
-  background-color: #171719;
-  height: 500px;
-`;
-
-const Row1 = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-
-  & h4 {
-    color: #e8eaec;
-  }
-`;
-
-const CloseButton = styled.button`
-  border: 0;
-  background-color: transparent;
-  color: #e8eaec;
-`;
-
 const HistoriesList = styled.ul`
   overflow: scroll;
   height: 320px;
 
   & li {
-    background-color: #303133;
+    background-color: ${({ theme }) => theme.colors.dark200};
     margin-bottom: 1rem;
     padding: 1rem;
   }
@@ -91,12 +60,4 @@ const DeleteAllButton = styled.button`
   width: 100%;
 `;
 
-export {
-  SearchInput,
-  HistoryWrapper,
-  CloseButton,
-  HistoriesList,
-  Row1,
-  HistoryItemWrapper,
-  DeleteAllButton,
-};
+export { SearchInput, HistoriesList, HistoryItemWrapper, DeleteAllButton };

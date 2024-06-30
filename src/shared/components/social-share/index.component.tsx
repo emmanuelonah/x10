@@ -16,7 +16,6 @@ import { useBoolean, useCopyToKeyboard, COPY_STATUS } from 'shared/hooks';
 
 import {
   ShareButton,
-  Modal,
   Heading,
   Body,
   Subtitle,
@@ -53,49 +52,53 @@ export function SocialShare({ url, title }: SocialSharePropTypes) {
 
   return (
     <>
-      <ShareButton onClick={toggle} className="share-btn">
-        <Share2Icon />
-        <span>Share</span>
-      </ShareButton>
+      {!open && (
+        <ShareButton onClick={toggle} className="share-btn">
+          <Share2Icon />
+          <span>Share</span>
+        </ShareButton>
+      )}
 
-      <Modal open={open} onClose={toggle} closeOnClickOutside>
-        <Heading>
-          <HeadingRow1>
-            <p>Share</p>
-            <CloseButton>Cancel</CloseButton>
-          </HeadingRow1>
-          <Subtitle>Images maybe subject to copyright.</Subtitle>
-        </Heading>
-
-        <Body>
-          <FacebookShareButton url={url} title={title} data-testid="facebook">
-            <FacebookIcon {...iconProps} />
-          </FacebookShareButton>
-          <WhatsappShareButton url={url} data-testid="whatsApp">
-            <WhatsappIcon {...iconProps} />
-          </WhatsappShareButton>
-          <TwitterShareButton url={url} title={title} data-testid="twitter">
-            <XIcon {...iconProps} />
-          </TwitterShareButton>
-          <EmailShareButton
-            url={url}
-            subject={title}
-            title={title}
-            body="Sent from x10 search engine"
-            data-testid="email"
-          >
-            <EmailIcon {...iconProps} />
-          </EmailShareButton>
-        </Body>
-
-        <Footer onClick={copyText}>
-          <StatusNode>{statusText}</StatusNode>
-          <LinkWrapper>
-            <span>{url}</span>
-            <Link2Icon role="button" />
-          </LinkWrapper>
-        </Footer>
-      </Modal>
+      {open && (
+        <>
+          <Heading>
+            <HeadingRow1>
+              <p>Share</p>
+              <CloseButton role="button" onClick={toggle}>
+                Cancel
+              </CloseButton>
+            </HeadingRow1>
+            <Subtitle>Images maybe subject to copyright.</Subtitle>
+          </Heading>
+          <Body>
+            <FacebookShareButton url={url} title={title} data-testid="facebook">
+              <FacebookIcon {...iconProps} />
+            </FacebookShareButton>
+            <WhatsappShareButton url={url} data-testid="whatsApp">
+              <WhatsappIcon {...iconProps} />
+            </WhatsappShareButton>
+            <TwitterShareButton url={url} title={title} data-testid="twitter">
+              <XIcon {...iconProps} />
+            </TwitterShareButton>
+            <EmailShareButton
+              url={url}
+              subject={title}
+              title={title}
+              body="Sent from x10 search engine"
+              data-testid="email"
+            >
+              <EmailIcon {...iconProps} />
+            </EmailShareButton>
+          </Body>
+          <Footer onClick={copyText}>
+            <StatusNode>{statusText}</StatusNode>
+            <LinkWrapper>
+              <span>{url}</span>
+              <Link2Icon role="button" />
+            </LinkWrapper>
+          </Footer>
+        </>
+      )}
     </>
   );
 }

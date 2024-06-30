@@ -4,6 +4,6 @@ export function useClassName() {
   const searchType = useSearchType();
 
   return function (type: Type) {
-    return type === searchType ? 'active' : '';
+    return type === searchType ? 'active' : 'inactive';
   };
 }

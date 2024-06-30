@@ -3,18 +3,19 @@ import React from 'react';
 import { ClockIcon } from '@radix-ui/react-icons';
 
 import { useBoolean } from 'shared/hooks';
-
-import { Content, Button } from './history-widget.styles';
+import { History, Dialog } from 'shared/components';
 
 export function HistoryWidget() {
   const [open, { toggle }] = useBoolean();
 
   return (
     <>
-      <Button type="button" title="View search history" onClick={toggle}>
+      <button type="button" title="View search history" onClick={toggle}>
         <ClockIcon width="20px" height="20px" />
-      </Button>
-      <Content open={open} onClose={toggle} className="content" />
+      </button>
+      <Dialog open={open} title="Histories" onClose={toggle}>
+        <History />
+      </Dialog>
     </>
   );
 }

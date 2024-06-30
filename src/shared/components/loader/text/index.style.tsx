@@ -6,7 +6,7 @@ const dim = keyframes`
   }
 
   100% {
-    color: #000;
+    color: ${({ theme }) => theme.colors.dark500};
   }
 `;
 

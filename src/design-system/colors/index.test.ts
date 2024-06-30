@@ -7,6 +7,7 @@ describe('colors', () => {
       white300: '#FDFEFF',
       white200: '#F7F7F7',
       white100: '#F7F7F7',
+      white50: '#e8eaec',
 
       warning400: '#FF7A00',
       warning300: '#FF9534',
@@ -40,12 +41,12 @@ describe('colors', () => {
       primary100: '#D4DDFC',
 
       dark500: '#000',
-      dark400: '#171719',
+      dark400: '#111015',
       dark300: '#4D4D4D',
-      dark200: '#999999',
+      dark200: '#1b1920',
       dark100: '#C9C9C9',
 
-      grey400: '#575a7b',
+      grey400: '#8B5CF6',
       grey300: '#242426',
       grey200: '#4f4e50',
       grey100: '#cacacb',
@@ -55,7 +56,7 @@ describe('colors', () => {
       accent200: '#F3F3F3',
       accent100: '#F7F7F7',
 
-      neutral400: '#6f6c90',
+      neutral400: '#8B5CF6',
       neutral300: '#d9dbe9',
       neutral200: '#e8e8e8',
       neutral100: '#bdc1c6',

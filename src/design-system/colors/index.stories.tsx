@@ -51,6 +51,7 @@ export const White400: Story = { args: { color: colors.white400 } };
 export const White300: Story = { args: { color: colors.white300 } };
 export const White200: Story = { args: { color: colors.white200 } };
 export const White100: Story = { args: { color: colors.white100 } };
+export const White50: Story = { args: { color: colors.white50 } };
 
 export const Dark500: Story = { args: { color: colors.dark500 } };
 export const Dark400: Story = { args: { color: colors.dark400 } };

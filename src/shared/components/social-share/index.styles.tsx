@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-import { ModalWrapper } from 'shared/components';
-
 const ShareButton = styled.button`
-  background-color: #394457;
-  color: white;
+  background-color: ${({ theme }) => theme.colors.grey400};
+  color: ${({ theme }) => theme.colors.white400};
   border: none;
   align-items: center;
   border-radius: 36px;
@@ -20,20 +18,8 @@ const ShareButton = styled.button`
   }
 `;
 
-const Modal = styled(ModalWrapper)`
-  position: fix;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  background-color: #303134;
-  border-radius: 10px 10px 0 0;
-  min-height: 300px;
-  width: 100%;
-`;
-
 const Heading = styled.div`
-  color: rgb(232, 234, 237);
+  color: ${({ theme }) => theme.colors.white400};
   border-bottom: 1px solid rgb(60, 64, 67);
 `;
 
@@ -44,13 +30,12 @@ const HeadingRow1 = styled.div`
 `;
 
 const Subtitle = styled.p`
-  color: rgb(154, 160, 166);
   font-size: 12px;
   padding: 0 1rem 0.5rem 1rem;
 `;
 
 const CloseButton = styled.button`
-  color: rgb(232, 234, 237);
+  color: ${({ theme }) => theme.colors.white400};
   background-color: transparent;
   border: none;
 `;
@@ -58,7 +43,10 @@ const CloseButton = styled.button`
 const Body = styled.div`
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+
+  & > * {
+    margin-right: 1rem;
+  }
 `;
 
 const Footer = styled.div`
@@ -82,7 +70,7 @@ const LinkWrapper = styled.div`
 `;
 
 const NeutralStatus = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.white400};
 `;
 
 const SuccessStatus = styled.p`
@@ -95,7 +83,6 @@ const FailedStatus = styled.p`
 
 export {
   ShareButton,
-  Modal,
   Heading,
   Body,
   Subtitle,

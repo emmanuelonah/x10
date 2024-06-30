@@ -9,7 +9,8 @@ const Header = styled.header`
 `;
 
 const Logo = styled.img`
-  width: 40px;
+  width: 25px;
+  height: 25px;
 `;
 
 const NavItem = styled.div`
@@ -19,7 +20,7 @@ const NavItem = styled.div`
   height: 100%;
 
   & svg {
-    color: ${({ theme }) => theme.colors.neutral200};
+    color: ${({ theme }) => theme.colors.white400};
   }
 
   & button {
@@ -45,28 +46,26 @@ const NavItem = styled.div`
 `;
 
 const Tab = styled.div`
-  border-bottom: solid 2px ${({ theme }) => theme.colors.neutral400};
-  border-radius: 1px;
+  background-color: ${({ theme }) => theme.colors.dark200};
+  border-radius: 5px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: ${({ theme }) => theme.typography.smallText.fontSize};
   margin-top: 2rem;
-  padding-bottom: 0.7rem;
+  padding: 0.3rem 0rem;
 `;
 
 const TabItem = styled(NavLink)`
+  border-radius: 5px;
   margin: 0 0.5rem;
   padding: 0.5rem;
-  display: block;
-
-  &:nth-child(3) {
-    display: flex;
-    justify-content: flex-end;
-  }
+  display: inline-block;
+  width: calc(100% / 3);
+  text-align: center;
 
   &.active {
     background-color: ${({ theme }) => theme.colors.grey400};
-    border-radius: 30px;
   }
 `;
 

@@ -6,8 +6,8 @@ type SearchWidgetContextType = {
   searchQuery: string;
   searchImage: string;
   resetSearch(): void;
-  handleImageChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSearchQueryChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  handleImageChange(event: React.ChangeEvent<HTMLInputElement>): void;
+  handleSearchQueryChange(event: React.ChangeEvent<HTMLTextAreaElement>): void;
 };
 
 const [SearchWidgetProvider, useSearchWidgetContext] =

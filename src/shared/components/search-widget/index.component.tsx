@@ -1,10 +1,10 @@
 import React, { useId, useRef } from 'react';
-import { ArrowRightIcon, ImageIcon } from '@radix-ui/react-icons';
+import { FilePlusIcon } from '@radix-ui/react-icons';
 
 import { useComposeRefs } from 'shared/hooks';
 
 import { useSearchWidgetContext } from '.';
-import { useSearchWidgetPresenter } from './useSearchWidget.presenter';
+import { useSearchWidget } from './useSearchWidget';
 import { Form, ChatBox, ImageInput, ImageInputLabel, SubmitButton } from './index.styles';
 
 type PrimitiveFormPropTypes = React.ComponentPropsWithoutRef<'form'>;
@@ -18,7 +18,7 @@ export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPr
     const imgSearchId = useId();
     const formRef = useRef<HTMLFormElement>(null);
     const composedRefs = useComposeRefs<HTMLFormElement>(formRef, forwardedRef);
-    const formSubmitHandler = useSearchWidgetPresenter(formRef, props.onSubmit);
+    const formSubmitHandler = useSearchWidget(formRef, props.onSubmit);
     const { searchQuery, handleImageChange, handleSearchQueryChange } = useSearchWidgetContext();
 
     return (
@@ -29,15 +29,15 @@ export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPr
           spellCheck="false"
           autoComplete="off"
           autoCapitalize="off"
-          aria-label="Ask a question"
-          placeholder="Ask a question"
+          aria-label="Ask anything"
+          placeholder="Ask anything"
           tabIndex={0}
           rows={1}
           value={searchQuery}
           onChange={handleSearchQueryChange}
         ></ChatBox>
         <ImageInputLabel htmlFor={imgSearchId}>
-          <ImageIcon height="25px" width="25px" />
+          <FilePlusIcon height="25px" width="25px" />
         </ImageInputLabel>
         <ImageInput
           id={imgSearchId}
@@ -48,7 +48,7 @@ export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPr
           onChange={handleImageChange}
         />
         <SubmitButton type="submit" aria-label="Submit">
-          <ArrowRightIcon height="25px" width="25px" />
+          Submit
         </SubmitButton>
       </Form>
     );

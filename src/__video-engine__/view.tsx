@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { useSearchWidgetContext } from 'shared/components';
+import { useSearchWidgetContext, Heading1 } from 'shared/components';
 
 export function VideoEngineView() {
-  const { searchQuery, searchImage } = useSearchWidgetContext();
+  const { searchQuery } = useSearchWidgetContext();
 
   return (
     <div data-testid="videoEngineView">
-      This is Video Search engine {searchQuery} {searchImage}
+      <Heading1>{searchQuery}</Heading1>
     </div>
   );
 }

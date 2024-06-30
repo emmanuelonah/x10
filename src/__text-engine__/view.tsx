@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { useSearchWidgetContext } from 'shared/components';
+import { useSearchWidgetContext, Heading3 } from 'shared/components';
 
 export function TextEngineView() {
-  const { searchQuery, searchImage } = useSearchWidgetContext();
+  const { searchQuery } = useSearchWidgetContext();
 
   return (
     <div data-testid="textEngineView">
-      This is Text Search engine {searchQuery} {searchImage}
+      <Heading3>{searchQuery}</Heading3>
     </div>
   );
 }

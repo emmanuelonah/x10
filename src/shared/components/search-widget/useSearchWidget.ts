@@ -1,10 +1,11 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 type OnSubmit = <P>(formData: Record<string, FormDataEntryValue>) => Promise<P>;
-export function useSearchWidgetPresenter(
-  formRef: React.RefObject<HTMLFormElement>,
-  onSubmit?: OnSubmit
-) {
+export function useSearchWidget(formRef: React.RefObject<HTMLFormElement>, onSubmit?: OnSubmit) {
+  useEffect(() => {
+    if (formRef.current?.scrollIntoView) formRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [formRef]);
+
   return useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();

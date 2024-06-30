@@ -8,9 +8,10 @@ describe('<SearchWidget/>', () => {
   it('should search by text', () => {
     renderWithOptions(<SearchWidget />);
 
-    const chatBox = screen.getByRole('textbox', { name: /Ask a question/i });
+    const chatBox = screen.getByRole('textbox', { name: /Ask anything/i });
     fireEvent.change(chatBox, { target: { value: 'Things fall apart' } });
 
+    expect(screen.getByRole('button', { name: /Submit/i })).toBeInTheDocument();
     expect(chatBox).toHaveValue('Things fall apart');
   });
 

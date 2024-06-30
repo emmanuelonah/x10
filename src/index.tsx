@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { ThemeProvider } from 'styled-components';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+/* import { ReactQueryDevtools } from '@tanstack/react-query-devtools'; */
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
 import { App } from 'app';
@@ -34,7 +34,7 @@ startMockServer().finally(() => {
               <InternetNotifier />
               <App />
             </GlobalStore>
-            <ReactQueryDevtools initialIsOpen={false} />
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </QueryClientProvider>
         </ThemeProvider>
       </ErrorBoundary>

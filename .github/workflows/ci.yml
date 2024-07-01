@@ -15,17 +15,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        # Specify the Node.js version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-        # Install packages job
       - name: Install packages
         run: yarn install --non-interactive
-        # Eslint job
-      - name: Run ESLint
-        run: yarn run lint
-        # Unit test job
-      - name: Run UnitTest
-        run: yarn run local:ci
+      - name: Run linter, test-coverage and build
+        run: yarn run pre:deploy

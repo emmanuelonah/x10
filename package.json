@@ -21,7 +21,7 @@
     "performance:audit": "lighthouse http://localhost:3000/",
     "pre:commit": "yarn run lint",
     "pre:push": "yarn run test:cv && yarn run build",
-    "pre:deploy": "pre:commit && pre:push",
+    "pre:deploy": "yarn run pre:commit && yarn run pre:push",
     "prepare": "husky"
   },
   "dependencies": {

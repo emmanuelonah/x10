@@ -10,6 +10,8 @@ import { HistoriesList, DeleteAllButton } from './index.styles';
 export function History() {
   const { search, deleteAHistory, deleteAll, ...historiesRequest } = useHistories();
 
+  const hasHistories = !!historiesRequest.data?.length;
+
   return (
     <>
       <SearchBox onSearch={search} />
@@ -22,9 +24,11 @@ export function History() {
           ))}
         </AsyncRenderer>
       </HistoriesList>
-      <DeleteAllButton type="button" onClick={deleteAll}>
-        Delete All
-      </DeleteAllButton>
+      {hasHistories && (
+        <DeleteAllButton type="button" onClick={deleteAll}>
+          Delete All
+        </DeleteAllButton>
+      )}
     </>
   );
 }

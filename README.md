@@ -184,3 +184,10 @@ All our design tokens lies inside the styles folder.
 2. __/src/design-system/colors:__ this contains our colors.
 
 3. __/src/design-system/typography:__ this contains our typographies e.g font-sizes, font-weights, spacing, breakpoints, and everything related to font.
+
+## The Search Engine Glimpse
+
+<img alt="" src="./public/icn-app-1.png"/>
+<img alt="" src="./public/icn-app-2.png"/>
+<img alt="" src="./public/icn-app-3.png"/>
+<img alt="" src="./public/icn-app-4.png"/>

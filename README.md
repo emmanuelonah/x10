@@ -41,8 +41,16 @@ x10 is a revolutionary search engine that leverages the power of Chrome, Bing, a
 9. [Git Action](https://docs.github.com/en/actions)
 
 10. [Storybook](https://storybook.js.org/)
-11. [GEMINI API](https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=rest)
+
+11. [Gemini API](https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=rest)
+
 12. [OpenAI API](https://platform.openai.com/docs/overview)
+
+13. [Bing](https://learn.microsoft.com/en-us/bing/search-apis/)
+
+14. [Yandex](https://yandex.cloud/en/docs/search-api/?utm_referrer=https%3A%2F%2Fwww.google.com%2F)
+
+15. [Unsplash](https://unsplash.com/documentation)
 
 ## Architecture used
 

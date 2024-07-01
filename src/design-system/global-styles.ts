@@ -94,6 +94,7 @@ const GlobalStyles = createGlobalStyle<Theme>`
         display: flex;
         display: -webkit-flex;
         flex-direction: column;
+        line-height: 1.7;
     }
 
     body main#main {

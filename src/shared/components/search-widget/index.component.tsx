@@ -1,5 +1,5 @@
 import React, { useId, useRef } from 'react';
-import { FilePlusIcon } from '@radix-ui/react-icons';
+import { CameraIcon } from '@radix-ui/react-icons';
 
 import { useComposeRefs } from 'shared/hooks';
 
@@ -37,7 +37,7 @@ export const SearchWidget = React.forwardRef<SearchWidgetElement, SearchWidgetPr
           onChange={handleSearchQueryChange}
         ></ChatBox>
         <ImageInputLabel htmlFor={imgSearchId}>
-          <FilePlusIcon height="25px" width="25px" />
+          <CameraIcon height="25px" width="25px" />
         </ImageInputLabel>
         <ImageInput
           id={imgSearchId}

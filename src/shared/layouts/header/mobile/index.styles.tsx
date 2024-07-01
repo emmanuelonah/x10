@@ -6,6 +6,11 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.dark400};
   min-height: 100px;
   padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: ${({ theme }) => theme.typography.zIndexes.max};
 `;
 
 const Logo = styled.img`

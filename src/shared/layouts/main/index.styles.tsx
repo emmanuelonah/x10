@@ -5,8 +5,10 @@ import { SearchWidget } from 'shared/components';
 import { Container } from '../container/index.layout';
 
 const MainNode = styled(Container)`
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
   position: relative;
+  margin-top: 120px;
+  margin-bottom: 50px;
 `;
 
 const SearchWidgetNode = styled(SearchWidget)`

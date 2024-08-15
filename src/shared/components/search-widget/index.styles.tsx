@@ -42,6 +42,7 @@ const ImageInputLabel = styled.label`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-right: 10px;
 
   &:hover {
     opacity: 0.8;
